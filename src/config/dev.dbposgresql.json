@@ -2,7 +2,7 @@
   "name": "db",
   "connector": "postgresql",
   "url": "postgres://qrkgtpsq:Kjt4EkUAWZT4AlYg88WA1ju8wAW_DXDs@rajje.db.elephantsql.com/qrkgtpsq",
-  "host": "localhost",
+  "host": "rajje.db.elephantsql.com",
   "port": 5433,
   "user": "qrkgtpsq",
   "password": "Kjt4EkUAWZT4AlYg88WA1ju8wAW_DXDs",
