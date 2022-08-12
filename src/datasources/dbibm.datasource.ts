@@ -1,14 +1,7 @@
 import {inject, lifeCycleObserver, LifeCycleObserver} from '@loopback/core';
 import {juggler} from '@loopback/repository';
+import {keys as llaves} from '../config/.keys';
 
-const config = {
-  name: 'dbibm',
-  connector: 'ibmi',
-  dsn: 'bhdasmq',
-  connectionString: 'DBQ=QGPL;NAM=1',
-  user: 'Jm007064',
-  password: 'JM210593'
-};
 
 // Observe application's life cycle to disconnect the datasource when
 // application is stopped. This allows the application to be shut down
@@ -18,11 +11,11 @@ const config = {
 export class DbibmDataSource extends juggler.DataSource
   implements LifeCycleObserver {
   static dataSourceName = 'dbibm';
-  static readonly defaultConfig = config;
+  static readonly defaultConfig = llaves.iconfig;
 
   constructor(
     @inject('datasources.config.dbibm', {optional: true})
-    dsConfig: object = config,
+    dsConfig: object = llaves.iconfig,
   ) {
     super(dsConfig);
   }

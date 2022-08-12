@@ -1,5 +1,5 @@
 import { /* inject, */ BindingScope, injectable} from '@loopback/core';
-import {keys as llaves} from '../config/keys';
+import {keys as llaves} from '../config/.keys';
 import {Users} from '../models/users.model';
 var jwt = require('jsonwebtoken');
 

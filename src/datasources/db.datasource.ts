@@ -1,6 +1,6 @@
 import {inject, lifeCycleObserver, LifeCycleObserver} from '@loopback/core';
 import {juggler} from '@loopback/repository';
-import {keys as llaves} from '../config/keys';
+import {keys as llaves} from '../config/.keys';
 
 
 

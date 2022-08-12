@@ -12,12 +12,12 @@ export namespace keys {
     database: 'postgres'
   };
   export const iconfig = {
-    name: 'db2ibmi',
+    name: 'dbibm',
     connector: 'ibmi',
     dsn: 'AS400',
-    connectionString: 'QGPL',
-    user: 'JM007064',
-    password: 'Jm210593'
+    connectionString: 'Driver={IBM i Access ODBC Driver};System=172.30.6.56;Uid=od310467;Pwd=prueba01;DBQ=QGPL;',
+    user: 'Jm007064',
+    password: 'JM210593'
   };
 
 
