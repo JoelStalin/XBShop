@@ -1,0 +1,8 @@
+{
+  "name": "dbibm",
+  "connector": "ibmi",
+  "dsn": "AS400",
+  "connectionString": "Driver={IBM i Access ODBC Driver};System=172.30.6.56;Uid=od310467;Pwd=prueba01;DBQ=QGPL;",
+  "user": "od310467",
+  "password": "prueba01"
+}

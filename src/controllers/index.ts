@@ -5,3 +5,5 @@ export * from './users-contoller.controller';
 
 
 
+
+export * from './useribm.controller';

@@ -1,9 +1,17 @@
 import {inject, lifeCycleObserver, LifeCycleObserver} from '@loopback/core';
 import {juggler} from '@loopback/repository';
-import {keys as llaves} from '../config/.keys';
+//import {keys as llaves} from '../config/.keys';
 
-
-
+const config = {
+  name: 'db',
+  connector: 'postgresql',
+  url: 'postgres://postgres:root@localhost:5433/postgres',
+  host: 'localhost',
+  port: 5433,
+  user: 'postgres',
+  password: 'root',
+  database: 'postgres'
+};
 // Observe application's life cycle to disconnect the datasource when
 // application is stopped. This allows the application to be shut down
 // gracefully. The `stop()` method is inherited from `juggler.DataSource`.
@@ -12,11 +20,11 @@ import {keys as llaves} from '../config/.keys';
 export class DbDataSource extends juggler.DataSource
   implements LifeCycleObserver {
   static dataSourceName = 'db';
-  static readonly defaultConfig = llaves.config;
+  static readonly defaultConfig = config;
 
   constructor(
     @inject('datasources.config.db', {optional: true})
-    dsConfig: object = llaves.config,
+    dsConfig: object = config,
   ) {
     super(dsConfig);
   }

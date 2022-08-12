@@ -1,0 +1,10 @@
+{
+  "name": "db",
+  "connector": "postgresql",
+  "url": "postgres: //postgres:root@localhost:5433/postgres",
+  "host": "localhost",
+  "port": 5433,
+  "user": "postgres",
+  "password": "root",
+  "database": "postgres"
+}

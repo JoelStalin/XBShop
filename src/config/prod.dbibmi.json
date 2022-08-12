@@ -1,0 +1,8 @@
+{
+  "name": "dbibm",
+  "connector": "ibmi",
+  "dsn": "AS400",
+  "connectionString": "",
+  "user": "od310467",
+  "password": "prueba01"
+}
