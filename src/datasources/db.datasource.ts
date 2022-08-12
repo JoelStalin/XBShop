@@ -1,17 +1,19 @@
 import {inject, lifeCycleObserver, LifeCycleObserver} from '@loopback/core';
 import {juggler} from '@loopback/repository';
-//import {keys as llaves} from '../config/.keys';
-
+import {keys as llaves} from '../config/.keys';
 const config = {
-  name: 'db',
-  connector: 'postgresql',
-  url: 'postgres://postgres:root@localhost:5433/postgres',
-  host: 'localhost',
-  port: 5433,
-  user: 'postgres',
-  password: 'root',
-  database: 'postgres'
+  name: llaves.config.name,
+  connector: llaves.config.connector,
+  url: llaves.config.url,
+  host: llaves.config.host,
+  port: llaves.config.port,
+  user: llaves.config.user,
+  password: llaves.config.password,
+  database: llaves.config.database
 };
+console.log(config);
+
+
 // Observe application's life cycle to disconnect the datasource when
 // application is stopped. This allows the application to be shut down
 // gracefully. The `stop()` method is inherited from `juggler.DataSource`.

@@ -1,7 +1,7 @@
 import {inject} from '@loopback/core';
 import {DefaultCrudRepository} from '@loopback/repository';
 import {DbDataSource} from '../datasources/db.datasource';
-import {Users, UsersRelations} from '../models';
+import {Users, UsersRelations} from '../models/users.model';
 
 export class UsersRepository extends DefaultCrudRepository<
   Users,

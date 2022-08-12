@@ -6,15 +6,20 @@ export class Useribm extends Entity {
     type: 'string',
     id: true,
     generated: false,
-    required: true,
+    required: false,
   })
-  ibmusern: string;
+  id: string;
 
   @property({
     type: 'string',
     required: true,
   })
-  ibmud: string;
+  nameibm: string;
+
+  @property({
+    type: 'string',
+  })
+  userdes?: string;
 
   // Define well-known properties here
 

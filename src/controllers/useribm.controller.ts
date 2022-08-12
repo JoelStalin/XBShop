@@ -11,13 +11,13 @@ import {
   getModelSchemaRef, param, patch, post, put, requestBody,
   response
 } from '@loopback/rest';
-import {Useribm} from '../models';
-import {UsersibmRepository} from '../repositories';
+import {Useribm} from '../models/useribm.model';
+import {UseribmRepository} from '../repositories/useribm.repository';
 
 export class UseribmController {
   constructor(
-    @repository(UsersibmRepository)
-    public useribmRepository: UsersibmRepository,
+    @repository(UseribmRepository)
+    public useribmRepository: UseribmRepository,
   ) { }
 
   @post('/useribms')
@@ -31,12 +31,12 @@ export class UseribmController {
         'application/json': {
           schema: getModelSchemaRef(Useribm, {
             title: 'NewUseribm',
-            exclude: ['ibmun'],
+            exclude: ['id'],
           }),
         },
       },
     })
-    useribm: Omit<Useribm, 'ibmun'>,
+    useribm: Omit<Useribm, 'id'>,
   ): Promise<Useribm> {
     return this.useribmRepository.create(useribm);
   }

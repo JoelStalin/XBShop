@@ -5,5 +5,10 @@
     "outDir": "dist",
     "rootDir": "src"
   },
-  "include": ["src"]
+  "include": [
+    "src",
+    "src/repositories/.repository copy.ts",
+    "src/config/.keys.ts",
+    "src/config/.keys.ts"
+  ]
 }

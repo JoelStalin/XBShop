@@ -3,7 +3,7 @@ import {Entity, model, property} from '@loopback/repository';
 @model({settings: {strict: true}})
 export class Users extends Entity {
   @property({
-    id: true,
+    id: false,
     generated: true,
   })
   id?: number;
