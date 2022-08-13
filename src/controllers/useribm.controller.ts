@@ -1,3 +1,4 @@
+import {service} from '@loopback/core';
 import {
   Count,
   CountSchema,
@@ -13,11 +14,14 @@ import {
 } from '@loopback/rest';
 import {Useribm} from '../models/useribm.model';
 import {UseribmRepository} from '../repositories/useribm.repository';
+import {ServiceSql} from '../services/service-sql.service';
 
 export class UseribmController {
   constructor(
     @repository(UseribmRepository)
     public useribmRepository: UseribmRepository,
+    @service(ServiceSql)
+    public serviceSql: ServiceSql
   ) { }
 
   @post('/useribms')
@@ -31,7 +35,7 @@ export class UseribmController {
         'application/json': {
           schema: getModelSchemaRef(Useribm, {
             title: 'NewUseribm',
-            exclude: ['id'],
+
           }),
         },
       },
@@ -66,8 +70,9 @@ export class UseribmController {
   })
   async find(
     @param.filter(Useribm) filter?: Filter<Useribm>,
-  ): Promise<Useribm[]> {
-    return this.useribmRepository.find(filter);
+  ): Promise<object> {
+
+    return this.serviceSql.getuser();
   }
 
   @patch('/useribms')

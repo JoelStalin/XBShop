@@ -13,8 +13,8 @@ import {
   response
 } from '@loopback/rest';
 import {Users} from '../models';
-import {UsersRepository} from '../repositories';
-import {JwtService} from '../services';
+import {UsersRepository} from '../repositories/users.repository';
+import {JwtService} from '../services/jwt.service';
 
 export class UsersContollerController {
   constructor(
@@ -34,8 +34,7 @@ export class UsersContollerController {
       content: {
         'application/json': {
           schema: getModelSchemaRef(Users, {
-            title: 'NewUsers',
-            exclude: ['id'],
+            title: 'NewUsers'
           }),
         },
       },
@@ -156,11 +155,11 @@ export class UsersContollerController {
     let usersx = await this.usersRepository.findOne({where: {userName: users.userName}});
     if (usersx) {
       let tk = this.jwtService.gentoken(usersx);
-      return{
-        users:usersx,
+      return {
+        users: usersx,
         token: tk
-           };
-    }else{
+      };
+    } else {
       throw new Error("validacion");
 
 

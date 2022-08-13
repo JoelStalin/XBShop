@@ -6,7 +6,7 @@ export class Useribm extends Entity {
     type: 'string',
     id: true,
     generated: false,
-    required: false,
+    required: true,
   })
   id: string;
 
